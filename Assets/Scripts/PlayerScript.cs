@@ -54,7 +54,7 @@ public class PlayerScript : MonoBehaviour
             Destroy(collision.collider.gameObject);
         }
 
-        if (scoreValue >= 10 && vinethud == 0)
+        if (scoreValue >= 8 && vinethud == 0)
         {
             WIN.SetActive(true);
             Destroy(this);
@@ -63,7 +63,7 @@ public class PlayerScript : MonoBehaviour
             vinethud = vinethud +1;
         }
 
-        if (scoreValue >= 6 && teleported == 0)
+        if (scoreValue >= 4 && teleported == 0)
         {
             teleported = teleported + 1;
             transform.position = new Vector2(67.5f, 3.0f);
@@ -97,11 +97,6 @@ public class PlayerScript : MonoBehaviour
 
     void Update()
     {
-        //ESCAPE
-        if (Input.GetKey("escape"))
-        {
-            Application.Quit();
-        }
 
         if (deathcounter == 1)
         {
